@@ -119,6 +119,28 @@ Based on the full project history — not just the bridge document — what are 
 
 These are things where your memory says one thing but you're not certain it's still current, or where a decision was made but you're not sure the human still wants it.
 
+---
+
+QUESTION 9 — UNREAD FILE ARTIFACTS IN STORAGE
+What files, datasets, exports, or outputs were generated during this project
+that were NEVER printed or quoted in any conversation message?
+
+These exist only in storage systems — S3 buckets, databases, local file systems,
+tool output directories. No AI in the receiving chain has ever seen their contents.
+The receiving AI is completely blind to them unless you name them here.
+
+For each unread artifact:
+  - File name or identifier
+  - What it contains (schema, record count, field names if known)
+  - Where it lives (storage system, path, bucket name)
+  - How to access it (command, API call, direct download)
+  - Whether you are certain it exists or only believe it does
+  - Whether it is the current/final version or may have been superseded
+
+This question is the most commonly skipped. It is not optional.
+The receiving AI cannot ask Manus or any execution tool to work with data
+it does not know exists.
+
 ============================================================
 FORMAT YOUR ANSWERS
 ============================================================
@@ -144,31 +166,31 @@ When the exporting AI responds:
 
 **Update your cold-start understanding** — revise Section 10 of the bridge in your working memory based on what you learned.
 
-**Do not begin execution** until Question 4 (code vs document) is fully answered. The most dangerous assumption a receiving AI makes is treating a described system as a built one.
+**Do not begin execution** until Question 4 (code vs document) and Question 9 (unread file artifacts) are fully answered. The most dangerous assumptions a receiving AI makes are treating a described system as a built one and treating a referenced dataset as visible when it has never been surfaced.
 
 ---
 
 ## The Human's 5 Questions
 
-After running the Interrogation Prompt against the exporting AI, ask the **human** these 5 questions before beginning work. These cannot be answered by any AI:
+After running the Interrogation Prompt against the exporting AI, ask the human these 5 questions:
 
 ```
-Before I begin active work on this project, I need you to confirm five things:
+Before I begin active work, I need you to confirm five things:
 
 1. [Most critical system or algorithm] — does this exist as running code right now,
    or is it still in design/document form?
 
 2. [Most recent significant number] — is this from actual system output,
-   or from an earlier estimate that hasn't been validated yet?
+   or from an earlier estimate not yet validated?
 
 3. [Most recent decision] — is this still the direction you want,
    or has your thinking changed since this was decided?
 
-4. Are there any constraints, changes, or decisions made outside of AI conversations
-   — in emails, calls, or with other people — that I should know before I begin?
+4. Are there any constraints, changes, or decisions made outside AI conversations
+   — in emails, calls, or with other people — that I should know?
 
 5. What is the single most important thing you want me to get right
-   in the first session? What would make this handoff feel successful to you?
+   in the first session?
 ```
 
 ---
@@ -182,7 +204,7 @@ Receiving AI reads bridge + runs Primer
           ↓
 Receiving AI runs Interrogation Prompt (against exporting AI)
           ↓
-Receiving AI asks Human's 5 Questions (against human)
+Receiving AI asks Human's 5 Questions
           ↓
 Gaps closed. Human confirms critical facts.
           ↓
@@ -204,4 +226,4 @@ Full handoff complete.
 
 ---
 
-*Context Bridge™ v2.1 — Because no project should die in a context window.*
+*Context Bridge™ v3.0 — Because no project should die in a context window.*
