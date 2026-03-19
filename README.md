@@ -106,13 +106,14 @@ CONTEXT_BRIDGE_[PROJECT]_[YYYY-MM-DD].md
 ```
 context-bridge/
 ├── README.md                               ← You are here
-├── LICENSE                                 ← MIT — free to use and fork
+├── WORKFLOW.md                             ← The complete 6-step protocol (START HERE)
+├── LICENSE                                 ← MIT
 │
 ├── prompts/
-│   ├── CONTEXT_BRIDGE_MAIN.md             ← The primary export prompt (v2.1, 17 sections)
+│   ├── CONTEXT_BRIDGE_MAIN.md             ← Export prompt (v3.0, 18 sections + Step 0)
 │   ├── CONTEXT_BRIDGE_SYNC.md             ← Multi-AI merge prompt
 │   ├── CONTEXT_BRIDGE_PRIMER.md           ← Receiving AI onboarding prompt
-│   └── CONTEXT_BRIDGE_INTERROGATION.md    ← Last 10% gap-closure prompt (NEW)
+│   └── CONTEXT_BRIDGE_INTERROGATION.md    ← Last 10% gap-closure (9 questions)
 │
 ├── examples/
 │   ├── EXAMPLE_software_project.md        ← Sample bridge: software build
@@ -122,7 +123,7 @@ context-bridge/
 └── docs/
     ├── WHY_THIS_EXISTS.md                 ← The full problem statement
     ├── LIMITATIONS.md                     ← What Context Bridge cannot do
-    └── MASTER_CONTEXT_SCHEMA.md           ← For teams: the persistent layer design
+    └── MASTER_CONTEXT_SCHEMA.md           ← Persistent layer design for teams
 ```
 
 ---
@@ -156,9 +157,9 @@ No single AI platform will ever build this. OpenAI cannot build a tool that help
 
 - [x] v1.0 — Single AI export prompt (14 sections)
 - [x] v2.0 — Multi-AI sync protocol + Receiving AI Primer + Key Artifacts section
-- [x] v2.1 — Section 17 Operational Micro-Knowledge + Interrogation Prompt (last 10% gap-closure)
-- [ ] v3.0 — EIP (Extraction & Intelligence Preservation) deep-project variant
-- [ ] v4.0 — MASTER_CONTEXT.md persistent layer spec
+- [x] v2.1 — Section 17 Operational Micro-Knowledge + Interrogation Prompt
+- [x] v3.0 — Step 0 Forensic Scan + Section 18 Gap Taxonomy + Section 12 uploaded files + Question 9 unread artifacts + WORKFLOW.md as centrepiece document
+- [ ] v4.0 — MASTER_CONTEXT.md persistent layer spec (formalized)
 - [ ] v5.0 — API-based auto-capture (no manual prompt required)
 - [ ] App — Platform-neutral persistent intelligence hub
 
@@ -192,4 +193,4 @@ The insight that it could be a universal standard came from realizing that every
 
 ---
 
-*Context Bridge™ v2.1 — Because no project should die in a context window.*
+*Context Bridge™ v3.0 — Because no project should die in a context window.*
