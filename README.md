@@ -41,13 +41,14 @@ Think of it as a **portable project brain** that lives outside every AI platform
 
 ---
 
-## The Three Prompts
+## The Four Prompts
 
 | Prompt | When To Use | Give It To |
 |--------|------------|------------|
 | **[Main Prompt](prompts/CONTEXT_BRIDGE_MAIN.md)** | End of any AI conversation | The AI you're leaving |
 | **[Sync Prompt](prompts/CONTEXT_BRIDGE_SYNC.md)** | Merging bridges from multiple AIs | The AI receiving multiple bridges |
 | **[Receiving AI Primer](prompts/CONTEXT_BRIDGE_PRIMER.md)** | Starting a new conversation | The AI you're starting with |
+| **[Interrogation Prompt](prompts/CONTEXT_BRIDGE_INTERROGATION.md)** | Closing the last 10% gap | Receiving AI → Exporting AI + Human |
 
 ---
 
@@ -104,23 +105,24 @@ CONTEXT_BRIDGE_[PROJECT]_[YYYY-MM-DD].md
 
 ```
 context-bridge/
-├── README.md                          ← You are here
-├── LICENSE                            ← MIT — free to use and fork
+├── README.md                               ← You are here
+├── LICENSE                                 ← MIT — free to use and fork
 │
 ├── prompts/
-│   ├── CONTEXT_BRIDGE_MAIN.md        ← The primary export prompt
-│   ├── CONTEXT_BRIDGE_SYNC.md        ← Multi-AI merge prompt
-│   └── CONTEXT_BRIDGE_PRIMER.md      ← Receiving AI onboarding prompt
+│   ├── CONTEXT_BRIDGE_MAIN.md             ← The primary export prompt (v2.1, 17 sections)
+│   ├── CONTEXT_BRIDGE_SYNC.md             ← Multi-AI merge prompt
+│   ├── CONTEXT_BRIDGE_PRIMER.md           ← Receiving AI onboarding prompt
+│   └── CONTEXT_BRIDGE_INTERROGATION.md    ← Last 10% gap-closure prompt (NEW)
 │
 ├── examples/
-│   ├── EXAMPLE_software_project.md   ← Sample bridge: software build
-│   ├── EXAMPLE_research_project.md   ← Sample bridge: research workflow
-│   └── EXAMPLE_multi_ai_workflow.md  ← Sample bridge: multi-AI project
+│   ├── EXAMPLE_software_project.md        ← Sample bridge: software build
+│   ├── EXAMPLE_research_project.md        ← Sample bridge: research workflow
+│   └── EXAMPLE_multi_ai_workflow.md       ← Sample bridge: multi-AI project
 │
 └── docs/
-    ├── WHY_THIS_EXISTS.md            ← The full problem statement
-    ├── LIMITATIONS.md                ← What Context Bridge cannot do
-    └── MASTER_CONTEXT_SCHEMA.md      ← For teams: the persistent layer design
+    ├── WHY_THIS_EXISTS.md                 ← The full problem statement
+    ├── LIMITATIONS.md                     ← What Context Bridge cannot do
+    └── MASTER_CONTEXT_SCHEMA.md           ← For teams: the persistent layer design
 ```
 
 ---
@@ -154,6 +156,7 @@ No single AI platform will ever build this. OpenAI cannot build a tool that help
 
 - [x] v1.0 — Single AI export prompt (14 sections)
 - [x] v2.0 — Multi-AI sync protocol + Receiving AI Primer + Key Artifacts section
+- [x] v2.1 — Section 17 Operational Micro-Knowledge + Interrogation Prompt (last 10% gap-closure)
 - [ ] v3.0 — EIP (Extraction & Intelligence Preservation) deep-project variant
 - [ ] v4.0 — MASTER_CONTEXT.md persistent layer spec
 - [ ] v5.0 — API-based auto-capture (no manual prompt required)
@@ -183,8 +186,10 @@ See [LICENSE](LICENSE) for full terms.
 
 Context Bridge was designed by a knowledge worker who spent two years building complex AI-driven products across ChatGPT, Claude, and Manus simultaneously — and kept losing everything every time he switched tools or started a new session.
 
-The protocol was built out of personal necessity. The insight that it could be a universal standard came from realizing that every knowledge worker in the world with a multi-AI workflow has exactly the same problem.
+The protocol was built out of personal necessity. The v2.1 Interrogation Prompt was born from a live handoff — when Claude took over from GPT as controller-architect on a real multi-AI project and identified the exact questions that no bridge document had answered. That operational experience is baked directly into the protocol.
+
+The insight that it could be a universal standard came from realizing that every knowledge worker in the world with a multi-AI workflow has exactly the same problem.
 
 ---
 
-*Context Bridge™ — Because no project should die in a context window.*
+*Context Bridge™ v2.1 — Because no project should die in a context window.*
