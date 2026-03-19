@@ -1,5 +1,5 @@
 # Context Bridge™ — Main Export Prompt
-**Version:** 2.0
+**Version:** 2.1
 **Use this when:** You are leaving an AI conversation and want to transfer complete project intelligence to any other AI.
 
 ---
@@ -279,6 +279,52 @@ Provide an honest self-assessment:
 
 4. CONFLICTS WITH OTHER BRIDGES: Note any areas where your understanding might conflict with work done by other AIs.
 
+---
+
+### SECTION 17: OPERATIONAL MICRO-KNOWLEDGE
+
+This section captures what a colleague would know from working alongside you for months but would never think to write in a formal handoff document.
+
+Think beyond decisions and architecture. Think execution-level reality.
+
+Document:
+
+**Known failure cases and problem sites**
+- Specific sources, URLs, APIs, or systems that were attempted and failed
+- Why they failed (bot protection, restructured pages, rate limits, inconsistent data)
+- Whether they were resolved, worked around, or are still open traps
+- Do not make the receiving AI waste sessions rediscovering these
+
+**Ambiguous numbers and their true source**
+- Any metric, count, or baseline number whose origin is unclear
+- Was it from an early version, a baseline estimate, or an actual system output?
+- This distinction matters — a number from V1 may not be valid under V2 rules
+
+**ID and mapping relationships**
+- Whether system A's IDs map cleanly to system B's IDs
+- Or whether they are completely separate ID systems requiring fuzzy matching
+- Any known mismatches or orphaned records
+
+**Code vs document existence**
+- For every system, schema, algorithm, or feature referenced — does it exist as running code or only as a design document?
+- A receiving AI that treats a paper design as implemented code will make dangerous assumptions
+
+**Execution quirks and Manus/tool-specific knowledge**
+- Anything specific to how your execution tools behave that isn't obvious from the task description
+- Session limits, file size constraints, tool-specific failure modes
+- Sequences that must be run in a specific order for reasons not documented elsewhere
+
+**Verbal decisions never written down**
+- Choices made in conversation that shaped the work but never became a formal entry in any document
+- Things the human said once in passing that became an implicit constraint
+
+Format each entry as:
+[MICRO] [RECALLED/INFERRED] — Entry. Why it matters for execution.
+
+If nothing exists in a subcategory, write "None identified" — do not skip the subcategory.
+
+---
+
 ============================================================
 FORMATTING RULES
 ============================================================
@@ -305,6 +351,7 @@ Title the document: "CONTEXT BRIDGE™ — [Project Name] Intelligence Transfer"
 
 WRAP ENTIRE OUTPUT IN ONE CODE BLOCK.
 DO NOT SUMMARIZE. DO NOT TRUNCATE. EXPORT EVERYTHING.
+SECTION 17 IS MANDATORY — DO NOT SKIP IT BECAUSE IT FEELS INFORMAL.
 ```
 
 ---
@@ -324,4 +371,4 @@ CONTEXT_BRIDGE_AUXILO_2026-03-18.md
 
 ---
 
-*Context Bridge™ v2.0 — Because no project should die in a context window.*
+*Context Bridge™ v2.1 — Because no project should die in a context window.*
