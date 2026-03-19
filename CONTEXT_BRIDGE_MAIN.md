@@ -1,5 +1,5 @@
 # Context Bridge™ — Main Export Prompt
-**Version:** 2.1
+**Version:** 3.0
 **Use this when:** You are leaving an AI conversation and want to transfer complete project intelligence to any other AI.
 
 ---
@@ -23,8 +23,29 @@ The receiving AI may be a completely different model, platform, or version. It w
 BEFORE YOU OUTPUT — RUN THIS INTERNAL PROTOCOL
 ============================================================
 
+STEP 0 — FORENSIC SCAN (run this before Steps 1–5)
+This is the most important step. Do not skip it.
+
+Read the ENTIRE conversation history from top to bottom — not from memory,
+but as a deliberate, systematic scan of every message exchanged.
+
+As you scan, flag every instance of:
+  - A decision being made (any decision, small or large)
+  - A file being uploaded by the human — what it was, what you found in it
+  - A failure, error, or unexpected result
+  - A metric, count, baseline, or number being stated
+  - A rule, constraint, or non-negotiable being set
+  - A file, dataset, export, or output being generated
+    (whether or not it was ever printed in conversation)
+  - A rejection — something proposed and turned down
+  - A change of direction or pivot
+
+Only after completing this scan should you proceed to Steps 1–5.
+The output of this scan is not visible — it is the internal foundation
+that makes everything below accurate.
+
 STEP 1 — TIMELINE RECONSTRUCTION
-Sequence every session on this project chronologically.
+Using your scan, sequence every session on this project chronologically.
 Note where memory feels certain vs. reconstructed.
 
 STEP 2 — CONTRIBUTION MAPPING
@@ -227,10 +248,22 @@ Include:
 
 ### SECTION 12: KEY ARTIFACTS & DELIVERABLES
 
-List every important file, document, dataset, codebase, or deliverable that exists.
+**Part A — Files produced during this project:**
+Format: Artifact name — description — location/format — [DELIVERED / DRAFT / IN_PROGRESS]
 
-Format:
-- Artifact name — description — location/format — [DELIVERED / DRAFT / IN_PROGRESS]
+**Part B — Files uploaded by the human during conversation:**
+For every file the human uploaded during this conversation:
+- File name — what it contained — what was extracted or decided from it
+- Whether the file itself is accessible to the next AI or only the intelligence from it
+If a critical decision was made from an uploaded file, reproduce the key finding here.
+
+**Part C — Data artifacts never surfaced in conversation:**
+Files, datasets, exports, or outputs generated during the project that were NEVER
+printed or quoted in any conversation message. They exist only in storage systems.
+The receiving AI cannot see these unless you name them here.
+Format: File name — what it contains — where it lives — how to access it — [VERIFIED EXISTS / BELIEVED TO EXIST / UNCERTAIN]
+
+If nothing exists in a part, write "None identified" — do not skip any part.
 
 ---
 
@@ -269,8 +302,6 @@ Format:
 
 ### SECTION 16: EXPORT INTEGRITY STATEMENT
 
-Provide an honest self-assessment:
-
 1. COMPLETENESS: What percentage of important context does this document capture? Why might it be less than 100%?
 
 2. HIGHEST-RISK ASSUMPTION: What is the single most dangerous assumption a receiving AI might make from this document?
@@ -283,47 +314,52 @@ Provide an honest self-assessment:
 
 ### SECTION 17: OPERATIONAL MICRO-KNOWLEDGE
 
-This section captures what a colleague would know from working alongside you for months but would never think to write in a formal handoff document.
-
-Think beyond decisions and architecture. Think execution-level reality.
-
-Document:
+This section captures what a colleague would know from working alongside you for months but would never think to write in a formal handoff document. Think execution-level reality, not architecture.
 
 **Known failure cases and problem sites**
-- Specific sources, URLs, APIs, or systems that were attempted and failed
-- Why they failed (bot protection, restructured pages, rate limits, inconsistent data)
-- Whether they were resolved, worked around, or are still open traps
-- Do not make the receiving AI waste sessions rediscovering these
+- Specific sources, URLs, APIs, or systems that failed and why
+- Whether resolved, worked around, or still open traps
 
 **Ambiguous numbers and their true source**
-- Any metric, count, or baseline number whose origin is unclear
-- Was it from an early version, a baseline estimate, or an actual system output?
-- This distinction matters — a number from V1 may not be valid under V2 rules
+- Any metric, count, or baseline whose origin is unclear
+- V1 estimate vs actual system output — this distinction is critical
 
 **ID and mapping relationships**
-- Whether system A's IDs map cleanly to system B's IDs
-- Or whether they are completely separate ID systems requiring fuzzy matching
-- Any known mismatches or orphaned records
+- Whether system IDs map cleanly across systems or require fuzzy matching
+- Known mismatches or orphaned records
 
 **Code vs document existence**
-- For every system, schema, algorithm, or feature referenced — does it exist as running code or only as a design document?
-- A receiving AI that treats a paper design as implemented code will make dangerous assumptions
+- For every algorithm, schema, or feature — running code or design document only?
 
-**Execution quirks and Manus/tool-specific knowledge**
-- Anything specific to how your execution tools behave that isn't obvious from the task description
-- Session limits, file size constraints, tool-specific failure modes
-- Sequences that must be run in a specific order for reasons not documented elsewhere
+**Execution tool quirks**
+- Tool-specific failure modes, session limits, mandatory sequencing
 
 **Verbal decisions never written down**
-- Choices made in conversation that shaped the work but never became a formal entry in any document
-- Things the human said once in passing that became an implicit constraint
+- Things said once in passing that became implicit constraints
 
-Format each entry as:
-[MICRO] [RECALLED/INFERRED] — Entry. Why it matters for execution.
-
-If nothing exists in a subcategory, write "None identified" — do not skip the subcategory.
+Format: [MICRO] [RECALLED/INFERRED] — Entry. Why it matters for execution.
+If nothing exists in a subcategory, write "None identified."
 
 ---
+
+### SECTION 18: GAP TAXONOMY SELF-ASSESSMENT
+
+Honest assessment of what this bridge does and does not cover across the three gap categories:
+
+**Category 1 — Decisions, architecture, rules (Sections 1–16)**
+Estimated coverage: [X%]
+What is most likely missing from this category:
+
+**Category 2 — Operational micro-knowledge (Section 17)**
+Estimated coverage: [X%]
+What execution-level knowledge exists that Section 17 could not surface:
+
+**Category 3 — Unread file artifacts (Section 12 Part C)**
+Are there files in storage you could NOT fully register in Section 12 Part C?
+Name any you suspect exist but could not describe:
+
+This section tells the receiving AI exactly where to probe hardest
+during the Interrogation step and how much to trust each part of this bridge.
 
 ============================================================
 FORMATTING RULES
@@ -351,24 +387,18 @@ Title the document: "CONTEXT BRIDGE™ — [Project Name] Intelligence Transfer"
 
 WRAP ENTIRE OUTPUT IN ONE CODE BLOCK.
 DO NOT SUMMARIZE. DO NOT TRUNCATE. EXPORT EVERYTHING.
-SECTION 17 IS MANDATORY — DO NOT SKIP IT BECAUSE IT FEELS INFORMAL.
+SECTIONS 17 AND 18 ARE MANDATORY — DO NOT SKIP THEM BECAUSE THEY FEEL INFORMAL.
+STEP 0 (FORENSIC SCAN) IS MANDATORY — DO NOT BEGIN WRITING UNTIL IT IS COMPLETE.
 ```
 
 ---
 
 ## Output Naming Convention
 
-Save the document your AI produces as:
 ```
 CONTEXT_BRIDGE_[PROJECTNAME]_[YYYY-MM-DD].md
 ```
 
-Example:
-```
-CONTEXT_BRIDGE_TISCA_2026-03-18.md
-CONTEXT_BRIDGE_AUXILO_2026-03-18.md
-```
-
 ---
 
-*Context Bridge™ v2.1 — Because no project should die in a context window.*
+*Context Bridge™ v3.0 — Because no project should die in a context window.*
