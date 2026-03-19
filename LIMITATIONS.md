@@ -20,7 +20,7 @@ The most valuable things to preserve — the approaches you explicitly rejected 
 
 When AI-B receives a Context Bridge from AI-A, it has no way to challenge or cross-check what it receives. It accepts the bridge as authoritative. If AI-A reconstructed something incorrectly, AI-B will build on that incorrect foundation — silently.
 
-**Mitigation:** Always review a Context Bridge document before giving it to a receiving AI. The 30-second scan you do is the verification layer. This cannot be automated without a human in the loop.
+**Mitigation:** Use the **Interrogation Prompt** (see `prompts/CONTEXT_BRIDGE_INTERROGATION.md`). This is specifically designed to run after the bridge is received — it asks the exporting AI targeted questions about operational details, failure cases, number provenance, and code-vs-document existence that structured sections cannot fully surface. It closes the last 10% gap that every bridge leaves open. Always review a bridge before handing it off, and always run the Interrogation Prompt before beginning execution.
 
 ### 4. Implicit Context Is Partially Recoverable
 
